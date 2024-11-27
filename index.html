@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    <div class="Notes-app">
+        <div class="notes-container">
+            <div class="notes-item">
+                    <div  class="notes-item-title">
+                      <h1>Title </h1>
+                      <hr>
+                    </div>
+                    <div class="notes-item-description">
+                        <p>Description</p>   
+            </div>
+            <div class="notes-item-description-edit">
+                <div class="notes-item-description-edit-date">
+                 6/8/2024
+                </div>
+              <div class="notes-item-description-edit-icon" onclick="this.classList.toggle('show-popup')">
+                 <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                 <div class="notes-item-description-edit-popup">
+                    <ul class="notes-item-description-edit-popup-list">
+                        <li class="notes-item-description-edit-popup-list-item">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <p>Edit</p>
+                        </li>
+                        <li class="notes-item-description-edit-popup-list-item">
+                            <i class="fa-solid fa-trash"></i>
+                            <p>Delete</p>
+                        </li> 
+                                                                        
+                    </ul>
+
+                 </div>
+              </div>
+            </div>
+        </div>
+        <div class="notes-newnotes">
+            <div class="notes-icons">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+        </div>
+
+    </div>
+     <div class="form">
+        <div class="form-container">
+            <div class="header">
+                <h3>Add Notes</h3>
+            
+                <div class="close-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                
+            </div>
+            <div class="form-main">
+                <label for="title" class="label">Title</label>
+                <input type="text" name="" id="title" class="field" placeholder="title">
+
+            </div>
+            <div class="form-maingrp">
+                <label for="Category" class="label">Category</label>
+                <input type="text" name="" id="Category" class="field" placeholder="Category">
+
+            </div>
+            <div class="form-maingrp">
+                <label for="Description" class="label">Description</label>
+                <textarea name="" rows="8" id="Description" class="field">Description</textarea>
+
+            </div>
+            <button class="form-button">Add Notes</button>
+        </div>
+
+     </div>
+
+
+
+</body>
+</html>
