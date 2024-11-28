@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 body{
-    background-color: rgb(156, 156, 188);
+    background-color: rgb(166, 166, 176);
     min-height: 100vh;
 }
 .notes-container{
@@ -189,14 +189,14 @@ textarea.field{
 .form-button{
     width: 100%;
     border: none;
-    background-color: rgb(244, 248, 248);
+    background-color: rgb(191, 200, 200);
     padding: 8px;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
 }
 .form-button:hover{
-    background-color: blueviolet;
+    background-color: rgb(125, 98, 150);
 }
 
 
