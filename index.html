@@ -3,44 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Notes-app</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 <body>
+    <div class="notes-search">
+        <input type="text" id="search" placeholder="Search notes...">
+    </div>
+    <div class="notes-filter">
+        <select id="categoryFilter">
+            <option value="">All Categories</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+        </select>
+    </div>
+    
+    
     <div class="Notes-app">
         <div class="notes-container">
-            <!-- <div class="notes-item">
-                    <div  class="notes-item-title">
-                      <h1>Title </h1>
-                      <hr>
-                    </div>
-                    <div class="notes-item-description">
-                        <p>Description</p>   
-            </div>
-            <div class="notes-item-description-edit">
-                <div class="notes-item-description-edit-date">
-                 6/8/2024
-                </div>
-              <div class="notes-item-description-edit-icon" onclick="this.classList.toggle('show-popup')">
-                 <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                 <div class="notes-item-description-edit-popup">
-                    <ul class="notes-item-description-edit-popup-list">
-                        <li class="notes-item-description-edit-popup-list-item">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                            <p>Edit</p>
-                        </li>
-                        <li class="notes-item-description-edit-popup-list-item">
-                            <i class="fa-solid fa-trash"></i>
-                            <p>Delete</p>
-
-                        </li> 
-                                                                        
-                    </ul>
-
-                 </div>
-              </div>
-            </div>
-        </div> -->
         <div class="notes-newnotes">
             <div class="notes-icons">
                 <i class="fa-solid fa-plus"></i>
@@ -52,6 +32,6 @@
  </div>
 
 
-<script src="script.js" defer></script>
+<script src="script.js" ></script>
 </body>
 </html>
