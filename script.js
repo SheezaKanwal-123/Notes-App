@@ -157,17 +157,14 @@ function rendernotes(searchQuery = "", filterCategory = "") {
 }
 
 function renderAddButton() {
-  
+   
     if (!document.querySelector(".notes-newnotes")) {
-       
         let notesContainer = document.querySelector(".notes-container");
         notesContainer.insertAdjacentHTML("beforeend", '<button class="notes-newnotes"><h1>Add Notes</h1></button>');
         
-    
         document.querySelector(".notes-newnotes").addEventListener("click", () => addNotes());
     }
 }
-
 
 renderAddButton();
 
