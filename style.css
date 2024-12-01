@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 body{
-    background-color: rgb(166, 166, 176);
+    background-color: rgb(231, 231, 238);
     min-height: 100vh;
 }
 .notes-container{
@@ -30,13 +30,13 @@ box-shadow: 0 3px 5px rgb(0,0, 0,0.1) ;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background-color: aqua;
+    background-color: rgb(57, 85, 85);
     transition: transform 0.1s;
 }
 
 .notes-icons{
     font-size: 6rem;
-    color: rgb(96, 193, 96);
+    color: rgb(191, 193, 132);
 }
 .notes-item-title,.notes-item-category {
     overflow: hidden;
@@ -57,7 +57,7 @@ box-shadow: 0 3px 5px rgb(0,0, 0,0.1) ;
     max-width: 300px;
     margin: 0 auto;
     display: block;
-    border: 1px solid #ccc;
+    border: 1px solid #9b9595;
     border-radius: 5px;
 }
 .notes-filter {
@@ -98,7 +98,7 @@ box-shadow: 0 3px 5px rgb(0,0, 0,0.1) ;
  display: flex;
  align-items: center;
  justify-content: space-between;
- border-top: 1px solid gray;
+ border-top: 1px solid rgb(171, 155, 155);
  position: relative;
  
 }
@@ -108,17 +108,21 @@ outline: none;
 border-radius: 5px; 
 width: 28px;
 height: 28px;
-background-color: gray;
+background-color: rgb(139, 137, 132);
+/* border: 2px solid black; */
 font: 1rem;
 
 cursor: pointer;
 
 }
+.notes-item-description-edit-icon button:hover{
+    background-color: rgb(191, 189, 186);
+}
 .notes-item{
     display: grid;
     grid-template-rows:50px 1fr 40px ;
     padding: 10px;
-    background-color: antiquewhite;
+    background-color: rgb(248, 236, 132);
 }
 .notes-item-description-edit-icon.show-popup .notes-item-description-edit-popup{
     transform: scale(1);
@@ -143,7 +147,8 @@ cursor: pointer;
 gap: 6px;
 }
 .notes-item-description-edit-popup-list-item :hover{
-    background-color: powderblue;
+    background-color: rgb(82, 98, 100);
+    padding:5px;
 }
 .form{
     display: flex;
@@ -160,7 +165,7 @@ gap: 6px;
 }
 .form-container{
 position: relative;
-background-color: rgb(151, 154, 154);
+background-color: rgb(135, 142, 142);
 padding: 1rem 0.7rem;
 border-radius: 6px;
 min-width: 260px;
@@ -187,7 +192,7 @@ margin: 12px;
     cursor: pointer;
 }
 .close-icon:hover{
-    background-color: bisque;
+    background-color: rgb(220, 219, 217);
   
 
 
@@ -205,7 +210,7 @@ margin: 12px;
 
 }
 .field{
-    border: 2px solid rgb(122, 120, 120);
+    border: 2px solid rgb(25, 19, 19);
     outline: none;
     border-radius: 5px;
     height: 44px;
@@ -224,14 +229,14 @@ textarea.field{
 .form-button{
     width: 100%;
     border: none;
-    background-color: rgb(191, 200, 200);
+    background-color: rgb(252, 252, 252);
     padding: 8px;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
 }
 .form-button:hover{
-    background-color: rgb(125, 98, 150);
+    background-color: rgb(233, 224, 216);
 }
 
 

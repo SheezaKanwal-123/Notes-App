@@ -2,6 +2,8 @@
 let Notes = document.querySelector(".notes-newnotes");
 let Notescontainer = document.querySelector(".notes-container");
 
+// Generate popup form for adding or updating notes
+
 function showpopup(title,desc,category,state){
    
     return ` <div class="form">
@@ -32,6 +34,7 @@ function showpopup(title,desc,category,state){
         <button class="form-button" data-state="${state}">${state} Notes</button>
     </div>`;
 }
+// Generate a note item
 
 function notesitem(id,title,desc,category,date){
     return ` <div class="notes-item" date-id="${id}">
@@ -75,7 +78,7 @@ function notesitem(id,title,desc,category,date){
 }
 
 
-
+// Add a new note using the popup form
 
 Notes.addEventListener("click",()=>addNotes());
 function addNotes(){
@@ -104,26 +107,25 @@ renderAddButton();
  
 }
 
+// Save notes to local storage
+
 function setIntolocalstorage(notes){
     localStorage.setItem("notes",JSON.stringify(notes));
 
 }
 
+// Retrieve notes from local storage
+
 function getfromlocalstorage() {
     const storedNotes = localStorage.getItem("notes");
     return storedNotes ? JSON.parse(storedNotes) : [];
 }
-function rendernotes(){
-    document.querySelectorAll(".notes-item").forEach(note => note.remove())
-    getfromlocalstorage().forEach(note =>{
-        let {id,title,desc,category,date}=note;
-        Notescontainer.insertAdjacentHTML("afterbegin", notesitem(id,title,desc,category,date))
-    })
-}
+
+// Initialize search and category filter functionality
+
 let searchInput = document.querySelector("#search");
 let categoryFilter = document.querySelector("#categoryFilter");
 
-// Event listeners to trigger re-rendering when search or category changes
 searchInput.addEventListener("input", () => {
     let searchQuery = searchInput.value;
     let filterCategory = categoryFilter.value;
@@ -135,11 +137,19 @@ categoryFilter.addEventListener("change", () => {
     let filterCategory = categoryFilter.value;
     rendernotes(searchQuery, filterCategory);
 });
+function rendernotes(){
+    document.querySelectorAll(".notes-item").forEach(note => note.remove())
+    getfromlocalstorage().forEach(note =>{
+        let {id,title,desc,category,date}=note;
+        Notescontainer.insertAdjacentHTML("afterbegin", notesitem(id,title,desc,category,date))
+    })
+}
 
-// Render notes function with search and category filter applied
+// Render all notes with optional search and category filtering
+
 function rendernotes(searchQuery = "", filterCategory = "") {
-    Notescontainer.innerHTML = "";
-    let notes = getfromlocalstorage();
+    Notescontainer.innerHTML = ""; 
+    let notes = getfromlocalstorage(); 
     let filteredNotes = notes.filter(note =>
         (note.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
          note.desc.toLowerCase().includes(searchQuery.toLowerCase())) && 
@@ -154,20 +164,30 @@ function rendernotes(searchQuery = "", filterCategory = "") {
         let { id, title, desc, category, date } = note;
         Notescontainer.insertAdjacentHTML("afterbegin", notesitem(id, title, desc, category, date));
     });
+
+    renderAddButton();
 }
 
+// Ensure the "Add Notes" button is always rendered
 function renderAddButton() {
-   
+    
     if (!document.querySelector(".notes-newnotes")) {
-        let notesContainer = document.querySelector(".notes-container");
-        notesContainer.insertAdjacentHTML("beforeend", '<button class="notes-newnotes"><h1>Add Notes</h1></button>');
+        Notescontainer.insertAdjacentHTML(
+            "afterbegin",
+            `<div class="notes-newnotes">
+                <div class="notes-icons">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>`
+        );
         
         document.querySelector(".notes-newnotes").addEventListener("click", () => addNotes());
     }
 }
 
-renderAddButton();
+rendernotes();
 
+// Close the popup form
 
 function closepopup() {
     let formElement = document.querySelector(".form");
@@ -175,6 +195,8 @@ function closepopup() {
         formElement.remove();
     }
 }
+
+// Update an existing note via the popup form
 
 function updatenotes(id,Title,desc,categ){
     // console.log(id,title,desc,category);
@@ -201,6 +223,7 @@ updatebtn.addEventListener("click", ()=>{
 });
 }
 
+// Delete a note 
 
 function deletenotes(id){
     if(confirm("sure to delete the Notes....?")){
