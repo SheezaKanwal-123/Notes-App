@@ -1,0 +1,42 @@
+@media (max-width: 768px) {
+    body{
+        justify-content: center;
+    }
+    
+    .notes-container {
+        padding: 0.5rem;
+        gap: 1rem;
+        flex-direction: column; 
+    }
+
+    .notes-item, .notes-newnotes {
+        min-width: 100%;
+        max-width: 100%;
+        height: auto; 
+    }
+
+    #search, #categoryFilter {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+    }
+
+    .notes-icons {
+        font-size: 4rem;
+    }
+
+    .form-container {
+        padding: 0.5rem;
+        width: 90%;
+        max-width: 340px;
+    }
+
+    .form-button {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    .notes-item-description-edit-popup {
+        right: 10px;
+        transform-origin: top right;
+    }
+}
