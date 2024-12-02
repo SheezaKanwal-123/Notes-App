@@ -18,17 +18,21 @@ function showpopup(title,desc,category,state){
         </div>
         <div class="form-main">
             <label for="title" class="label">Title</label>
-            <input type="text" name="" id="title" class="field" placeholder="title" value="${title}">
+            <input type="text" name="" id="title" class="field" placeholder="title" value="${state === "update" ? title : ""}">
 
         </div>
         <div class="form-maingrp">
-            <label for="Category" class="label">Category</label>
-            <input type="text" name="" id="Category" class="field" placeholder="Category" value="${category}" >
+            <label for="Category" class="label" >Category</label>
+               <select id="Category" class="field" >
+           
+                    <option value="Work" ${category === "Work" ? "selected" : ""}>Work</option>
+                    <option value="Personal" ${category === "Personal" ? "selected" : ""}>Personal</option>
 
+                </select>
         </div>
         <div class="form-maingrp">
             <label for="Description" class="label">Description</label>
-            <textarea name="" rows="8" id="Description" class="field">${desc}</textarea>
+            <textarea name="" rows="8" id="Description" class="field">${state === "update" ? desc : ""}</textarea>
 
         </div>
         <button class="form-button" data-state="${state}">${state} Notes</button>
@@ -128,15 +132,11 @@ let categoryFilter = document.querySelector("#categoryFilter");
 
 searchInput.addEventListener("input", () => {
     let searchQuery = searchInput.value;
-    let filterCategory = categoryFilter.value;
-    rendernotes(searchQuery, filterCategory);
+    
+    rendernotes(searchQuery);
 });
 
-categoryFilter.addEventListener("change", () => {
-    let searchQuery = searchInput.value;
-    let filterCategory = categoryFilter.value;
-    rendernotes(searchQuery, filterCategory);
-});
+
 function rendernotes(){
     document.querySelectorAll(".notes-item").forEach(note => note.remove())
     getfromlocalstorage().forEach(note =>{
